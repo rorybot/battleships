@@ -16,6 +16,18 @@ describe 'Board analysis' do
     board = Board.new
     expect(board.periscope(:A9)).to eq ('Water')
   end
+
+  it 'should find it occupied' do
+    board = Board.new
+    board.row_a[:A1] = 'battleship'
+    expect(board.periscope(:A1)).to eq ('battleship')
+  end
+
+  it 'can inspect the a number of rows along' do
+    board = Board.new
+    board.row_a[:A2] = 'battleship'
+    expect(board.radar([:A1, :A2, :A3])).to eq(["A1 is free!", "A2 is blocked!", "A3 is free!"])
+  end
 end
 
 end

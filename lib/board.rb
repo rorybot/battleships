@@ -20,6 +20,22 @@ class Board
 
   end
 
+  def radar(grid_refs)
+    message = []
+    results = []
+    grid_refs.each{|grid_ref|
+    if periscope(grid_ref) == 'Water'
+      message << "#{grid_ref} is free!"
+      results << grid_ref
+    else
+      message << "#{grid_ref} is blocked!"
+      results << grid_ref
+    end
+  }
+
+    return message
+  end
+
 private
 
   def row_variable_namer
@@ -55,6 +71,8 @@ end
 #   8. Return an array of all the possible free spaces it found
 #
 #   end
+
+#When Drop a ship, it will also have to record back to an instance of that ship what bits it was dropped on
 
 
 end
