@@ -11,4 +11,11 @@ describe 'Board initialisation' do
     # (player_id => Player.last.id)
   end
 
+describe 'Board analysis' do
+  it 'can inspect the state of a row entry' do
+    board = Board.new
+    expect(board.periscope(:A9)).to eq ('Water')
+  end
+end
+
 end
