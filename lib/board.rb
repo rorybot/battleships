@@ -29,11 +29,15 @@ class Board
       results << grid_ref
     else
       message << "#{grid_ref} is blocked!"
-      results << grid_ref
     end
   }
 
     return message
+  end
+
+  def legal_move?(results,ship_length)
+    return "Go for it!" if ship_length <= results.length 
+      "Bzzt - no can do!"
   end
 
 private

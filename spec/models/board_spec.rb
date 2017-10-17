@@ -28,6 +28,30 @@ describe 'Board analysis' do
     board.row_a[:A2] = 'battleship'
     expect(board.radar([:A1, :A2, :A3])).to eq(["A1 is free!", "A2 is blocked!", "A3 is free!"])
   end
+
+  it 'can inspect the row above at same column' do
+    board = Board.new
+    board.row_c[:c1] = 'battleship'
+    expect(board.radar([:A1, :B1, :C1])).to eq(["A1 is free!", "B1 is blocked!", "C1 is blocked!"])
+  end
+
+  #These will become backbone of checking if a new boat placement is legal; when actually playing, you would only periscope a specific grid ref -- that would at least then assign it to an array of player's checked grid refs
+
+  it 'checks if a set of spaces is legal and gets LEGAL' do
+    board = Board.new
+    board.row_a[:A2] = 'battleship'
+    results = [1,2,3]
+    ship_length = 2
+    expect(board.legal_move?(results, ship_length)).to eq "Go for it!"
+  end
+
+  it 'checks if a set of spaces is legal and gets ILLEGAL' do
+    board = Board.new
+    board.row_a[:A2] = 'battleship'
+    results = [1,2,3]
+    ship_length = 4
+    expect(board.legal_move?(results, ship_length)).to eq "Bzzt - no can do!"
+  end
 end
 
 end
