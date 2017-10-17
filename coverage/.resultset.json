@@ -1,0 +1,57 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/MacBook/Projects/Battleships/spec/models/initialise_game_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/MacBook/Projects/Battleships/lib/board.rb": [
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        111,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        11,
+        10,
+        null,
+        null,
+        null,
+        1,
+        1,
+        110,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1508272890
+  }
+}
