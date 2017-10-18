@@ -23,6 +23,7 @@ class Board
   def radar(grid_refs)
     message = []
     results = []
+    ship_length = 3
     grid_refs.each{|grid_ref|
     if periscope(grid_ref) == 'Water'
       message << "#{grid_ref} is free!"
@@ -31,13 +32,14 @@ class Board
       message << "#{grid_ref} is blocked!"
     end
   }
+    p legal_move?(results, ship_length)
 
-    return message
+    return legal_move?(results, ship_length) + print_message(message)
   end
 
   def legal_move?(results,ship_length)
-    return "Go for it!" if ship_length <= results.length 
-      "Bzzt - no can do!"
+    return "Go for it! " if ship_length <= results.length
+      "Bzzt - no can do! "
   end
 
 private
@@ -53,6 +55,10 @@ def hashify_the_grid
   @alphanum_grid.map!{|row|
      Hash[row.collect { |v| [v, 'Water']}]
   }
+end
+
+def print_message(message)
+  message.join(", ")
 end
 #
 # def ship_placement(ship_size, first placement)
