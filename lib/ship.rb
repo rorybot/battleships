@@ -17,22 +17,8 @@ class Ship
     }
 
     return @length = ship_hash[name] if ship_hash.key?(name)
-    'No such ship in our fleet, Admiral!'
-    #
-    #
-    # if name == 'cruiser'
-    #   @length = 3
-    # elsif name == 'battleship'
-    #   @length = 4
-    # elsif name == 'carrier'
-    #   @length = 5
-    # elsif name == 'submarine'
-    #   @length = 3
-    # elsif name == 'destroyer'
-    #   @length = 2
-    # else
-    #   'No such ship in our fleet, Admiral!'
-    # end
+    raise 'No such ship in our fleet, Admiral!'
+
   end
 
 end
