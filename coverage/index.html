@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-10-18T09:36:03+01:00">2017-10-18T09:36:03+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-10-19T09:10:58+01:00">2017-10-19T09:10:58+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         27.1
+         24.6
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>2</b> files in total.
-    <b>68</b> relevant lines. 
-    <span class="green"><b>68</b> lines covered</span> and
+    <b>4</b> files in total.
+    <b>92</b> relevant lines. 
+    <span class="green"><b>92</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -54,18 +54,38 @@
         <td class="strong"><a href="#4d175175b1966f198f30ab29ae2cba917fd2e4df" class="src_link" title="lib/board.rb">lib/board.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>88</td>
-        <td>35</td>
-        <td>35</td>
+        <td>32</td>
+        <td>32</td>
         <td>0</td>
-        <td>51.7</td>
+        <td>9.2</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#5af112265e944894470d388e8224e2ad4d2c6369" class="src_link" title="lib/board_grid.rb">lib/board_grid.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>41</td>
+        <td>21</td>
+        <td>21</td>
+        <td>0</td>
+        <td>91.9</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#20c23a0fad624fb3bae77411bae39e1ec3a3edf5" class="src_link" title="spec/models/board_grid_spec.rb">spec/models/board_grid_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.0</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#9c9dfb71bb2e49a95a3e832ce4ebddc17b1ac906" class="src_link" title="spec/models/board_spec.rb">spec/models/board_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>56</td>
-        <td>33</td>
-        <td>33</td>
+        <td>62</td>
+        <td>39</td>
+        <td>39</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -91,8 +111,8 @@
     <h3>lib/board.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>35</b> relevant lines. 
-      <span class="green"><b>35</b> lines covered</span> and
+      <b>32</b> relevant lines. 
+      <span class="green"><b>32</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -100,10 +120,10 @@
   <pre>
     <ol>
       
-        <li class="never" data-hits="" data-linenumber="1">
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">require_relative &#39;board_grid&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="2">
@@ -112,220 +132,220 @@
           <code class="ruby">class Board</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
           <code class="ruby">  attr_reader :alphanum_grid, :row_a, :row_b, :row_c, :row_d, :row_e, :row_f, :row_g, :row_h, :row_i, :row_j</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  def initialize</code>
+          <code class="ruby">  def initialize()</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="7">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="6">
+          <span class="hits">8</span>
           
-          <code class="ruby">    letters = (&#39;A&#39;..&#39;J&#39;).to_a</code>
+          <code class="ruby">    @alphanum_grid = BoardGrid.new.set_board_grid</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="8">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="8" data-linenumber="7">
+          <span class="hits">8</span>
           
-          <code class="ruby">    numbers = (1..10).to_a</code>
+          <code class="ruby">    create_variables_for_each_row</code>
         </li>
       
-        <li class="covered" data-hits="777" data-linenumber="9">
-          <span class="hits">777</span>
-          
-          <code class="ruby">    @alphanum_grid = letters.map{|letter| numbers.map{|number| (letter+number.to_s).to_sym}}</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="7" data-linenumber="11">
-          <span class="hits">7</span>
-          
-          <code class="ruby">    hashify_the_grid</code>
-        </li>
-      
-        <li class="covered" data-hits="7" data-linenumber="12">
-          <span class="hits">7</span>
-          
-          <code class="ruby">    row_variable_namer</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">  def periscope(grid_ref)</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="17">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="11" data-linenumber="11">
+          <span class="hits">11</span>
           
-          <code class="ruby">    alphanum_grid.each{|row| row.include? grid_ref</code>
+          <code class="ruby">    alphanum_grid.each do |row|</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="18">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="11" data-linenumber="12">
+          <span class="hits">11</span>
           
-          <code class="ruby">      return row[grid_ref]</code>
+          <code class="ruby">      row.include? grid_ref</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="covered" data-hits="11" data-linenumber="13">
+          <span class="hits">11</span>
           
-          
-          <code class="ruby">    }</code>
+          <code class="ruby">      return contents_of(row, grid_ref)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="21">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="23">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def radar(grid_refs)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="24">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    message = []</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="25">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    results = []</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="26">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    ship_length = 3</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="27">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    grid_refs.each{|grid_ref|</code>
-        </li>
-      
-        <li class="covered" data-hits="6" data-linenumber="28">
-          <span class="hits">6</span>
-          
-          <code class="ruby">    if periscope(grid_ref) == &#39;Water&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="29">
-          <span class="hits">3</span>
-          
-          <code class="ruby">      message &lt;&lt; &quot;#{grid_ref} is free!&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="30">
-          <span class="hits">3</span>
-          
-          <code class="ruby">      results &lt;&lt; grid_ref</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="31">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="3" data-linenumber="32">
-          <span class="hits">3</span>
-          
-          <code class="ruby">      message &lt;&lt; &quot;#{grid_ref} is blocked!&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">  }</code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="35">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    p legal_move?(results, ship_length)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="37">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
-          <code class="ruby">    return legal_move?(results, ship_length) + print_message(message)</code>
+          <code class="ruby">  def radar(grid_refs, ship_length = 3)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="18">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    message = []</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="19">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    results = []</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="20">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    grid_refs.each do |grid_ref|</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="21">
+          <span class="hits">9</span>
+          
+          <code class="ruby">      grid_ref_status_printer(grid_ref, message)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="24">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    legal_move?(results, ship_length) + print_message(message)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def legal_move?(results, ship_length)</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="28">
+          <span class="hits">5</span>
+          
+          <code class="ruby">    return &#39;Go for it! &#39; if ship_length &lt;= results.length</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="29">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    &#39;Bzzt - no can do! &#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def place_ship(ship_placement_array)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">    # ship_placement_array.each{|x| find it in its rspective row; set hash valuye to taht}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">  # private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
@@ -337,79 +357,79 @@
         <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
-          <code class="ruby">  def legal_move?(results,ship_length)</code>
+          <code class="ruby">  def print_message(message)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="41">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="3" data-linenumber="41">
+          <span class="hits">3</span>
           
-          <code class="ruby">    return &quot;Go for it! &quot; if ship_length &lt;= results.length</code>
+          <code class="ruby">    message.join(&#39;, &#39;)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="42">
-          <span class="hits">5</span>
+        <li class="never" data-hits="" data-linenumber="42">
           
-          <code class="ruby">      &quot;Bzzt - no can do! &quot;</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="44">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def grid_ref_status_printer(grid_ref_input, message_array_output)</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="45">
+          <span class="hits">9</span>
+          
+          <code class="ruby">    return message_array_output &lt;&lt; &quot;#{grid_ref_input} is free!&quot; if periscope(grid_ref_input) == &#39;Water&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="46">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    message_array_output &lt;&lt; &quot;#{grid_ref_input} is blocked!&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="45">
+        <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
-          <code class="ruby">private</code>
+          <code class="ruby">  def contents_of(row, grid_ref)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="covered" data-hits="11" data-linenumber="50">
+          <span class="hits">11</span>
           
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="47">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def row_variable_namer</code>
-        </li>
-      
-        <li class="covered" data-hits="7" data-linenumber="48">
-          <span class="hits">7</span>
-          
-          <code class="ruby">    letter_start = &#39;a&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="77" data-linenumber="49">
-          <span class="hits">77</span>
-          
-          <code class="ruby">    alphanum_grid.each{|i| row = instance_variable_set(&quot;@row_#{letter_start}&quot;, i)</code>
-        </li>
-      
-        <li class="covered" data-hits="70" data-linenumber="50">
-          <span class="hits">70</span>
-          
-          <code class="ruby">    letter_start.next!</code>
+          <code class="ruby">    row[grid_ref]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="51">
           
           
-          <code class="ruby">    }</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="53">
@@ -418,196 +438,196 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="54">
-          <span class="hits">1</span>
-          
-          <code class="ruby">def hashify_the_grid</code>
-        </li>
-      
-        <li class="covered" data-hits="7" data-linenumber="55">
-          <span class="hits">7</span>
-          
-          <code class="ruby">  @alphanum_grid.map!{|row|</code>
-        </li>
-      
-        <li class="covered" data-hits="770" data-linenumber="56">
-          <span class="hits">770</span>
-          
-          <code class="ruby">     Hash[row.collect { |v| [v, &#39;Water&#39;]}]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="57">
-          
-          
-          <code class="ruby">  }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="58">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="54">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="60">
+        <li class="covered" data-hits="1" data-linenumber="55">
           <span class="hits">1</span>
           
-          <code class="ruby">def print_message(message)</code>
+          <code class="ruby">            def create_variables_for_each_row(twoD_array_representing_rows = alphanum_grid)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="61">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="8" data-linenumber="56">
+          <span class="hits">8</span>
           
-          <code class="ruby">  message.join(&quot;, &quot;)</code>
+          <code class="ruby">              letter_start = &#39;a&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="57">
+          <span class="hits">8</span>
+          
+          <code class="ruby">              twoD_array_representing_rows.each do |i|</code>
+        </li>
+      
+        <li class="covered" data-hits="80" data-linenumber="58">
+          <span class="hits">80</span>
+          
+          <code class="ruby">                instance_variable_set(&quot;@row_#{letter_start}&quot;, i)</code>
+        </li>
+      
+        <li class="covered" data-hits="80" data-linenumber="59">
+          <span class="hits">80</span>
+          
+          <code class="ruby">                letter_start.next!</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">              end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby">            end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="62">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="63">
           
           
-          <code class="ruby">#</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="64">
           
           
-          <code class="ruby"># def ship_placement(ship_size, first placement)</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="65">
           
           
-          <code class="ruby">#   1. Where do you want to place the ship</code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="66">
           
           
-          <code class="ruby">#   2. How many free squares are there around that square?</code>
+          <code class="ruby">  # def ship_placement(ship_size, first placement)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="67">
           
           
-          <code class="ruby">#   3. Is there enough for you to fit in?</code>
+          <code class="ruby">  #   1. Where do you want to place the ship</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="68">
           
           
-          <code class="ruby">#   4. If not, return that it not enough space to fit there in any configuaration</code>
+          <code class="ruby">  #   2. How many free squares are there around that square?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="69">
           
           
-          <code class="ruby">#</code>
+          <code class="ruby">  #   3. Is there enough for you to fit in?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="70">
           
           
-          <code class="ruby">#     therefore need a method that</code>
+          <code class="ruby">  #   4. If not, return that it not enough space to fit there in any configuaration</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby">#   1. Look at current square</code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="72">
           
           
-          <code class="ruby">#   2. Be able to tell when looking backwards and forwards across that row where placement cna be made</code>
+          <code class="ruby">  #     therefore need a method that</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
           
           
-          <code class="ruby">#     3. With a prohibition that index number cannot be less than 0 or greater than 9</code>
+          <code class="ruby">  #   1. Look at current square</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="74">
           
           
-          <code class="ruby">#</code>
+          <code class="ruby">  #   2. Be able to tell when looking backwards and forwards across that row where placement cna be made</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
           
           
-          <code class="ruby">#     and a method that</code>
+          <code class="ruby">  #     3. With a prohibition that index number cannot be less than 0 or greater than 9</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="76">
           
           
-          <code class="ruby">#   4. Be able to look at index number of row above it</code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="77">
           
           
-          <code class="ruby">#   5. Check if that one free</code>
+          <code class="ruby">  #     and a method that</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="78">
           
           
-          <code class="ruby">#   6. Check index number of row below it</code>
+          <code class="ruby">  #   4. Be able to look at index number of row above it</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby">#     7. Check if that one free</code>
+          <code class="ruby">  #   5. Check if that one free</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="80">
           
           
-          <code class="ruby">#</code>
+          <code class="ruby">  #   6. Check index number of row below it</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="81">
           
           
-          <code class="ruby">#   8. Return an array of all the possible free spaces it found</code>
+          <code class="ruby">  #     7. Check if that one free</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="82">
           
           
-          <code class="ruby">#</code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="83">
           
           
-          <code class="ruby">#   end</code>
+          <code class="ruby">  #   8. Return an array of all the possible free spaces it found</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="84">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="85">
           
           
-          <code class="ruby">#When Drop a ship, it will also have to record back to an instance of that ship what bits it was dropped on</code>
+          <code class="ruby">  #   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="86">
@@ -619,7 +639,7 @@
         <li class="never" data-hits="" data-linenumber="87">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  # When Drop a ship, it will also have to record back to an instance of that ship what bits it was dropped on</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="88">
@@ -633,13 +653,297 @@
 </div>
 
       
+        <div class="source_table" id="5af112265e944894470d388e8224e2ad4d2c6369">
+  <div class="header">
+    <h3>lib/board_grid.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>21</b> relevant lines. 
+      <span class="green"><b>21</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class BoardGrid</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_reader :alphanum_grid</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def initialize</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="5">
+          <span class="hits">8</span>
+          
+          <code class="ruby">    @alphanum_grid = []</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">    # set_board_grid</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def set_board_grid</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="10">
+          <span class="hits">8</span>
+          
+          <code class="ruby">    return @alphanum_grid = create_array_of_hashes(place_every_set_of_ten_into_array)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def create_array_of_hashes(twoD_array)</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="16">
+          <span class="hits">8</span>
+          
+          <code class="ruby">    twoD_array.map! do |row|</code>
+        </li>
+      
+        <li class="covered" data-hits="80" data-linenumber="17">
+          <span class="hits">80</span>
+          
+          <code class="ruby">      Hash[convert_every_element_to_grid_ref_plus_water(row)]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def convert_every_element_to_grid_ref_plus_water(row,value = &#39;Water&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="880" data-linenumber="22">
+          <span class="hits">880</span>
+          
+          <code class="ruby">    row.collect { |symbol_key| [symbol_key, value] }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def place_every_set_of_ten_into_array(array_method = produce_array_of_symbols)</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="26">
+          <span class="hits">8</span>
+          
+          <code class="ruby">    array_of_symbols = array_method</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="27">
+          <span class="hits">8</span>
+          
+          <code class="ruby">    array_of_array_of_symbols = []</code>
+        </li>
+      
+        <li class="covered" data-hits="88" data-linenumber="28">
+          <span class="hits">88</span>
+          
+          <code class="ruby">    array_of_symbols.each_slice(10){|ten| array_of_array_of_symbols &lt;&lt; ten}</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="29">
+          <span class="hits">8</span>
+          
+          <code class="ruby">    return array_of_array_of_symbols</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def produce_array_of_symbols</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="33">
+          <span class="hits">8</span>
+          
+          <code class="ruby">    letters = (&#39;A&#39;..&#39;J&#39;).to_a</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="34">
+          <span class="hits">8</span>
+          
+          <code class="ruby">    numbers = (&#39;1&#39;..&#39;10&#39;).to_a</code>
+        </li>
+      
+        <li class="covered" data-hits="808" data-linenumber="35">
+          <span class="hits">808</span>
+          
+          <code class="ruby">    return letters.product(numbers).map { |letter, number| (letter+number).to_sym }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="20c23a0fad624fb3bae77411bae39e1ec3a3edf5">
+  <div class="header">
+    <h3>spec/models/board_grid_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>0</b> relevant lines. 
+      <span class="green"><b>0</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="9c9dfb71bb2e49a95a3e832ce4ebddc17b1ac906">
   <div class="header">
     <h3>spec/models/board_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>33</b> relevant lines. 
-      <span class="green"><b>33</b> lines covered</span> and
+      <b>39</b> relevant lines. 
+      <span class="green"><b>39</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -665,196 +969,196 @@
           <code class="ruby">describe &#39;Board initialisation&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
           <code class="ruby">  it &#39;has a hash representing row A&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
           <code class="ruby">    board = Board.new</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(board.row_a).to eq({:A1 =&gt; &#39;Water&#39;, :A10 =&gt; &#39;Water&#39;, :A2 =&gt; &#39;Water&#39;, :A3 =&gt; &#39;Water&#39;, :A4 =&gt; &#39;Water&#39;, :A5 =&gt; &#39;Water&#39;, :A6 =&gt; &#39;Water&#39;, :A7 =&gt; &#39;Water&#39;, :A8 =&gt; &#39;Water&#39;, :A9 =&gt; &#39;Water&#39;})</code>
+          <code class="ruby">    expect(board.row_a).to eq(A1: &#39;Water&#39;, A10: &#39;Water&#39;, A2: &#39;Water&#39;, A3: &#39;Water&#39;, A4: &#39;Water&#39;, A5: &#39;Water&#39;, A6: &#39;Water&#39;, A7: &#39;Water&#39;, A8: &#39;Water&#39;, A9: &#39;Water&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby">    # (player_id =&gt; Player.last.id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;Board analysis&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;can inspect the state of a row entry&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">describe &#39;Board analysis&#39; do</code>
+          <code class="ruby">      board = Board.new</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;can inspect the state of a row entry&#39; do</code>
+          <code class="ruby">      expect(board.periscope(:A9)).to eq &#39;Water&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="15">
           
-          <code class="ruby">    board = Board.new</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(board.periscope(:A9)).to eq (&#39;Water&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;should find it occupied&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      board = Board.new</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;should find it occupied&#39; do</code>
+          <code class="ruby">      board.row_a[:A1] = &#39;battleship&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">    board = Board.new</code>
+          <code class="ruby">      expect(board.periscope(:A1)).to eq &#39;battleship&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="21">
           
-          <code class="ruby">    board.row_a[:A1] = &#39;battleship&#39;</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(board.periscope(:A1)).to eq (&#39;battleship&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;can inspect the a number of rows along&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      board = Board.new</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;can inspect the a number of rows along&#39; do</code>
+          <code class="ruby">      board.row_a[:A2] = &#39;battleship&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">    board = Board.new</code>
+          <code class="ruby">      expect(board.radar(%i[A1 A2 A3])).to eq(&#39;Bzzt - no can do! A1 is free!, A2 is blocked!, A3 is free!&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="27">
           
-          <code class="ruby">    board.row_a[:A2] = &#39;battleship&#39;</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(board.radar([:A1, :A2, :A3])).to eq(&quot;Bzzt - no can do! A1 is free!, A2 is blocked!, A3 is free!&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby"></code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;can inspect the row above at same column&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      board = Board.new</code>
+        </li>
+      
         <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;can inspect the row above at same column&#39; do</code>
+          <code class="ruby">      board.row_c[:c1] = &#39;battleship&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="32">
           <span class="hits">1</span>
           
-          <code class="ruby">    board = Board.new</code>
+          <code class="ruby">      expect(board.radar(%i[A1 B1 C1])).to eq(&#39;Bzzt - no can do! A1 is free!, B1 is blocked!, C1 is blocked!&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="33">
           
-          <code class="ruby">    board.row_c[:c1] = &#39;battleship&#39;</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="34">
           
-          <code class="ruby">    expect(board.radar([:A1, :B1, :C1])).to eq(&quot;Bzzt - no can do! A1 is free!, B1 is blocked!, C1 is blocked!&quot;)</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    # These will become backbone of checking if a new boat placement is legal; when actually playing, you would only periscope a specific grid ref -- that would at least then assign it to an array of player&#39;s checked grid refs</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
@@ -863,121 +1167,157 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  #These will become backbone of checking if a new boat placement is legal; when actually playing, you would only periscope a specific grid ref -- that would at least then assign it to an array of player&#39;s checked grid refs</code>
+          <code class="ruby">    it &#39;checks if a set of spaces for boat placement is legal and gets LEGAL&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      board = Board.new</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;checks if a set of spaces for boat placement is legal and gets LEGAL&#39; do</code>
+          <code class="ruby">      board.row_a[:A2] = &#39;battleship&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
-          <code class="ruby">    board = Board.new</code>
+          <code class="ruby">      results = [1, 2, 3]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
-          <code class="ruby">    board.row_a[:A2] = &#39;battleship&#39;</code>
+          <code class="ruby">      ship_length = 2</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">    results = [1,2,3]</code>
+          <code class="ruby">      expect(board.legal_move?(results, ship_length)).to eq &#39;Go for it! &#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="43">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="43">
           
-          <code class="ruby">    ship_length = 2</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="44">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(board.legal_move?(results, ship_length)).to eq &quot;Go for it! &quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="45">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="never" data-hits="" data-linenumber="44">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;checks if a set of spaces for boat placement is legal and gets ILLEGAL&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      board = Board.new</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;checks if a set of spaces for boat placement is legal and gets ILLEGAL&#39; do</code>
+          <code class="ruby">      board.row_a[:A2] = &#39;battleship&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="48">
           <span class="hits">1</span>
           
-          <code class="ruby">    board = Board.new</code>
+          <code class="ruby">      results = [1, 2, 3]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
-          <code class="ruby">    board.row_a[:A2] = &#39;battleship&#39;</code>
+          <code class="ruby">      ship_length = 4</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="50">
           <span class="hits">1</span>
           
-          <code class="ruby">    results = [1,2,3]</code>
+          <code class="ruby">      expect(board.legal_move?(results, ship_length)).to eq &#39;Bzzt - no can do! &#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="51">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="51">
           
-          <code class="ruby">    ship_length = 4</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="52">
-          <span class="hits">1</span>
           
-          <code class="ruby">    expect(board.legal_move?(results, ship_length)).to eq &quot;Bzzt - no can do! &quot;</code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
-          
-          
-          <code class="ruby">end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;placing ships on the board&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;can register a ship as being placed&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      board = Board.new</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      ship_placement_array = :A1, :A2, :A3</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="58">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      board.place_ship(ship_placement_array)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(board.radar(ship_placement_array)).to eq &#39;Bzzt - no can do! A1 is blocked!, A2 is blocked!, A3 is blocked!&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby">end</code>

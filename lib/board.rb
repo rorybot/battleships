@@ -1,88 +1,88 @@
-
+require_relative 'board_grid'
 class Board
-
   attr_reader :alphanum_grid, :row_a, :row_b, :row_c, :row_d, :row_e, :row_f, :row_g, :row_h, :row_i, :row_j
 
-  def initialize
-    letters = ('A'..'J').to_a
-    numbers = (1..10).to_a
-    @alphanum_grid = letters.map{|letter| numbers.map{|number| (letter+number.to_s).to_sym}}
-
-    hashify_the_grid
-    row_variable_namer
-
+  def initialize()
+    @alphanum_grid = BoardGrid.new.set_board_grid
+    create_variables_for_each_row
   end
 
   def periscope(grid_ref)
-    alphanum_grid.each{|row| row.include? grid_ref
-      return row[grid_ref]
-    }
-
+    alphanum_grid.each do |row|
+      row.include? grid_ref
+      return contents_of(row, grid_ref)
+    end
   end
 
-  def radar(grid_refs)
+  def radar(grid_refs, ship_length = 3)
     message = []
     results = []
-    ship_length = 3
-    grid_refs.each{|grid_ref|
-    if periscope(grid_ref) == 'Water'
-      message << "#{grid_ref} is free!"
-      results << grid_ref
-    else
-      message << "#{grid_ref} is blocked!"
+    grid_refs.each do |grid_ref|
+      grid_ref_status_printer(grid_ref, message)
     end
-  }
-    p legal_move?(results, ship_length)
 
-    return legal_move?(results, ship_length) + print_message(message)
+    legal_move?(results, ship_length) + print_message(message)
   end
 
-  def legal_move?(results,ship_length)
-    return "Go for it! " if ship_length <= results.length
-      "Bzzt - no can do! "
+  def legal_move?(results, ship_length)
+    return 'Go for it! ' if ship_length <= results.length
+    'Bzzt - no can do! '
   end
 
-private
-
-  def row_variable_namer
-    letter_start = 'a'
-    alphanum_grid.each{|i| row = instance_variable_set("@row_#{letter_start}", i)
-    letter_start.next!
-    }
+  def place_ship(ship_placement_array)
+    # ship_placement_array.each{|x| find it in its rspective row; set hash valuye to taht}
   end
 
-def hashify_the_grid
-  @alphanum_grid.map!{|row|
-     Hash[row.collect { |v| [v, 'Water']}]
-  }
-end
-
-def print_message(message)
-  message.join(", ")
-end
-#
-# def ship_placement(ship_size, first placement)
-#   1. Where do you want to place the ship
-#   2. How many free squares are there around that square?
-#   3. Is there enough for you to fit in?
-#   4. If not, return that it not enough space to fit there in any configuaration
-#
-#     therefore need a method that
-#   1. Look at current square
-#   2. Be able to tell when looking backwards and forwards across that row where placement cna be made
-#     3. With a prohibition that index number cannot be less than 0 or greater than 9
-#
-#     and a method that
-#   4. Be able to look at index number of row above it
-#   5. Check if that one free
-#   6. Check index number of row below it
-#     7. Check if that one free
-#
-#   8. Return an array of all the possible free spaces it found
-#
-#   end
-
-#When Drop a ship, it will also have to record back to an instance of that ship what bits it was dropped on
+  # private
 
 
+
+  def print_message(message)
+    message.join(', ')
+  end
+
+  def grid_ref_status_printer(grid_ref_input, message_array_output)
+    return message_array_output << "#{grid_ref_input} is free!" if periscope(grid_ref_input) == 'Water'
+    message_array_output << "#{grid_ref_input} is blocked!"
+  end
+
+  def contents_of(row, grid_ref)
+    row[grid_ref]
+  end
+
+
+
+            def create_variables_for_each_row(twoD_array_representing_rows = alphanum_grid)
+              letter_start = 'a'
+              twoD_array_representing_rows.each do |i|
+                instance_variable_set("@row_#{letter_start}", i)
+                letter_start.next!
+              end
+            end
+
+
+
+  #
+  # def ship_placement(ship_size, first placement)
+  #   1. Where do you want to place the ship
+  #   2. How many free squares are there around that square?
+  #   3. Is there enough for you to fit in?
+  #   4. If not, return that it not enough space to fit there in any configuaration
+  #
+  #     therefore need a method that
+  #   1. Look at current square
+  #   2. Be able to tell when looking backwards and forwards across that row where placement cna be made
+  #     3. With a prohibition that index number cannot be less than 0 or greater than 9
+  #
+  #     and a method that
+  #   4. Be able to look at index number of row above it
+  #   5. Check if that one free
+  #   6. Check index number of row below it
+  #     7. Check if that one free
+  #
+  #   8. Return an array of all the possible free spaces it found
+  #
+  #   end
+
+  # When Drop a ship, it will also have to record back to an instance of that ship what bits it was dropped on
 end
