@@ -1,9 +1,10 @@
 require_relative 'board_grid'
 class Board
-  attr_reader :alphanum_grid, :row_a, :row_b, :row_c, :row_d, :row_e, :row_f, :row_g, :row_h, :row_i, :row_j
+  attr_reader :alphanum_grid, :row_A, :row_B, :row_C, :row_D, :row_E, :row_F, :row_G, :row_H, :row_I, :row_J
 
-  def initialize()
+  def initialize
     @alphanum_grid = BoardGrid.new.set_board_grid
+    @rows = []
     create_variables_for_each_row
   end
 
@@ -14,13 +15,17 @@ class Board
     end
   end
 
+  def place_ship(ship_placement_array, ship_type)
+    ship_placement_array.each{|grid_ref| change_grid_ref(grid_ref, ship_type)}
+  end
+
+
   def radar(grid_refs, ship_length = 3)
     message = []
     results = []
-    grid_refs.each do |grid_ref|
+    grid_refs.each { |grid_ref|
       grid_ref_status_printer(grid_ref, message)
-    end
-
+    }
     legal_move?(results, ship_length) + print_message(message)
   end
 
@@ -29,13 +34,23 @@ class Board
     'Bzzt - no can do! '
   end
 
-  def place_ship(ship_placement_array)
-    # ship_placement_array.each{|x| find it in its rspective row; set hash valuye to taht}
+
+  private
+
+  def change_grid_ref(grid_ref, new_value)
+    alphanum_grid.each do |row|
+      row[grid_ref] = new_value if row.include? grid_ref
+    end
   end
 
-  # private
+  def create_variables_for_each_row(twoD_array_representing_rows = alphanum_grid)
+    letter_start = 'A'
+    twoD_array_representing_rows.each do |i|
+      new_variable = instance_variable_set("@row_#{letter_start}", i)
+      letter_start.next!
 
-
+    end
+  end
 
   def print_message(message)
     message.join(', ')
@@ -49,18 +64,6 @@ class Board
   def contents_of(row, grid_ref)
     row[grid_ref]
   end
-
-
-
-            def create_variables_for_each_row(twoD_array_representing_rows = alphanum_grid)
-              letter_start = 'a'
-              twoD_array_representing_rows.each do |i|
-                instance_variable_set("@row_#{letter_start}", i)
-                letter_start.next!
-              end
-            end
-
-
 
   #
   # def ship_placement(ship_size, first placement)

@@ -3,7 +3,7 @@ class BoardGrid
   attr_reader :alphanum_grid
   def initialize
     @alphanum_grid = []
-    # set_board_grid
+    set_board_grid
   end
 
   def set_board_grid
