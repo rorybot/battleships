@@ -210,8 +210,47 @@
         null,
         null,
         null
+      ],
+      "/Users/MacBook/Projects/Battleships/spec/models/ship_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/MacBook/Projects/Battleships/lib/ship.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1508408103
+    "timestamp": 1508408869
   }
 }
