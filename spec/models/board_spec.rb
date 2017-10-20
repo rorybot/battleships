@@ -52,11 +52,12 @@ describe 'Board initialisation' do
   end
 
   describe 'placing ships on the board' do
-    it 'can register a ship as being placed' do
+    it 'can register a ship as being placed horizontally' do
       board = Board.new
       ship_placement_array = :A1, :A2, :A3
       board.place_ship(ship_placement_array, 'battleship')
       expect(board.radar(ship_placement_array)).to eq 'Bzzt - no can do! A1 is blocked!, A2 is blocked!, A3 is blocked!'
+      expect(board.periscope(:A3)).to eq 'battleship'
     end
 
     it 'can identify what is placed there' do
@@ -64,6 +65,13 @@ describe 'Board initialisation' do
       ship_placement_array = :A1, :A2, :A3
       board.place_ship(ship_placement_array, 'battleship')
       expect(ship_placement_array.map{|grid_ref| board.periscope(grid_ref)}).to eq ['battleship', 'battleship', 'battleship']
+    end
+
+    it 'can register a ship as being placed vertically' do
+      board = Board.new
+      ship_placement_array = :A1, :B1, :C1
+      board.place_ship(ship_placement_array, 'battleship')
+      expect(board.radar(ship_placement_array)).to eq 'Bzzt - no can do! A1 is blocked!, B1 is blocked!, C1 is blocked!'
     end
   end
 end
